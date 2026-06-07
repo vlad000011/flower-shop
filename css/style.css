@@ -1,0 +1,215 @@
+/* CSS — BEM методология */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #e91e63;
+    font-weight: 700;
+}
+
+.header__list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.header__link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header__link:hover,
+.header__link--active {
+    color: #e91e63;
+}
+
+.header__cart {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.header__cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #e91e63;
+    color: white;
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://source.unsplash.com/random/1600x900/?flowers') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.hero__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero__subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.hero__btn, .cta__btn {
+    background: #e91e63;
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Products */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card__image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card__content {
+    padding: 1.2rem;
+}
+
+.product-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card__price {
+    font-size: 1.4rem;
+    color: #e91e63;
+    font-weight: 700;
+    margin: 0.8rem 0;
+}
+
+.product-card__btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Остальные секции */
+.featured__container, .benefits__container, .catalog__container, .about__container, .cta__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.featured__title, .benefits__title, .catalog__title, .about__title, .cta__title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.benefit-card {
+    text-align: center;
+}
+
+.benefit-card__icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: #ddd;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .hero__title { font-size: 3rem; }
+    .header__container { flex-direction: column; gap: 1rem; }
+}
